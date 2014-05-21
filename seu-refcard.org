@@ -1,0 +1,101 @@
+#+TITLE: 
+#+DATE: 
+#+OPTIONS: toc:nil num:nil TeX:t title:nil author:nil
+#+LaTeX_CLASS_OPTIONS: [10pt, landscape, letterpaper]
+#+LATEX_HEADER_EXTRA: \usepackage{multicol}
+#+LATEX_HEADER_EXTRA: \usepackage{hyperref}
+#+LATEX_HEADER_EXTRA: \usepackage{fullpage}
+#+LaTeX_HEADER_EXTRA: \usepackage{paralist}
+#+LaTeX_HEADER_EXTRA: \let\description\compactdesc
+#+LaTeX_HEADER_EXTRA: \let\itemize\compactitem
+\thispagestyle{empty}
+\begin{multicols}{3}
+
+* *SEU* QUICK REFERENCE
+
+/seu/, or the /Source Entry Utility/, is a screen-based, block-mode
+text editor included on OS400-based (now IBM i) "midrange" systems.
+It is available in PDM and was the main editor for S/36 SSP.  It is
+similar to mainframe editors such as Xedit. It can be accessed with
+the =STRSEU= command or from PDM.
+
+This document does not cover all of /seu/ -- including, eg., changing
+session defaults or creating user-defined commands -- but only the key
+editing commands.  For that, see IBM's documentation, or a web search.
+
+** COMMAND LINE COMMANDS
+
+Note: *F10* will move the cursor from the editing area to the command
+line.  Commands are not case-sensitive.
+
+ - f, find :: Find string in source member
+ - save :: Save current source member
+ - hide /string/ :: Hide lines containing /string/
+ - t, top :: Position cursor to top of source member
+ - b, bottom :: Position cursor to bottom of source member
+
+** INLINE EDITING COMMANDS
+
+/seu/ contains User Exits (or commands) which can be used to assist
+with code editing.  To utilize these exits you can type over the
+source sequence numbers and press Enter.
+
+ - a :: Place code sample after the line of code selected
+ - a n :: Place code sample after the line of code selected for /n/
+          lines
+ - b :: Place code sample before the line of code selected
+ - b n :: Place code sample before the line of code selected for /n/
+          lines
+ - c :: Copy line of code
+ - c n :: Copy /n/ lines of code
+ - cc :: Block copy -- put cc at first and last line of code block to
+         copy
+ - d :: Delete line
+ - d n :: Delete /n/ lines
+ - dd :: Delete block -- put dd at first and last line of code block
+         to delete
+ - i :: Insert blank line
+ - i n :: Insert /n/ blank lines
+ - m :: Move line
+ - m n :: Move /n/ lines
+
+** INPUT PROMPTING COMMANDS
+
+To cause /seu/ to prompt for command syntax, enter the following
+commands in the same manner as with inline editing commands above.
+Each command looks like IPx or IPxx, where /x/ or /xx/ is one of the
+following:
+
+ - *General help*: /?/ List all available editing prompts within SEU
+ - *RPG/400 and RPG/ILE*: /H/ Header Specification | /F/ File
+   Specification | /FX/ File Continuation | /I/ Record Identification
+   Specification | /IX/ Record Identification Continuation | /J/ Input
+   Field Definition | /JX/ Input Field Definition Continuation | /D/
+   Definition Specification | /DX/ Definition Extended Specification |
+   /C/ Calculation Specification | /CX/ Extended Calculation | /OD/
+   Output Disk File Specification | /O/ Output File Specification |
+   /P/ Output File Detail Specification | /PR/ Procedure
+   Specification | /PX/ Procedure Extended | /*/ Comments | /**/
+   Compile Time Table Entries
+ - *Cobol & Cobol/ILE*: /CB/ keying Cobol Statement | /C*/ keying
+   Comments
+ - *Reformat & Sort*: /RH/ Reformat Header | /RR/ Reformat Record Type |
+   /RF/ Reformat Field Definition | /RC/ Reformat Constant
+ - *DDS*: /PF/ Physical File Definitions | /LF/ Logical File
+   Definitions | /BC/ Interactive Communications Feature File (ICF) |
+   /DP/ Display & Printer File Definitions | /A*/ Comments
+ - *Menu*: /MS/ Display Control Specifications | /MH/ Help Definition
+   Specifications | /MD/ Field Definitions Specifications | /MC/ Field
+   Definitions Continuation Specifications
+ - *Fortran*: /FT/ Fortran Statements | /F*/ Fortran Comments
+ - *Other*: /NC/ Provides a prompt for keying with no syntax
+   checking | /**/ Provides a prompt for keying free format
+
+** AUTHORS / HISTORY / COPYRIGHT
+
+Originally written by editors of the Midrange Wiki at
+http://wiki.midrange.com/index.php/SEU, accessed 28 April, 2014.
+Modificatins and format comversion by Evans Winner.  Content available
+under Commons Attribution-Share Alike 3.0 United States License.
+
+\end{multicols}
