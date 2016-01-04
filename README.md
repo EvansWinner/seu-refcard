@@ -6,3 +6,5 @@ exported from Emacs using org-mode 8 (or possible earlier or later
 versions) using function `org-latex-export-to-pdf`.  The resulting pdf
 file should fit on a single page of US letter sized paper, suitable
 for printing.
+
+Heck, I might as well include the PDF file in git... so I will.
